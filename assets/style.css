@@ -25,11 +25,12 @@
 
 .code {
   font-family: "Courier Prime", monospace;
-  border: 2px solid #202fff;
+  /* border: 2px solid #202fff; */
+  background-color: black;
   padding: 10px;
 }
 code {
-  color: red;
+  color: greenyellow;
   font-family: "Courier Prime", monospace;
 }
 code > span {
@@ -39,7 +40,7 @@ code > span {
   background-color: #ffcc00;
   color: black;
   padding: 10px 20px;
-  border-radius: 5px;
+  border-radius: 0px;
   text-decoration: none;
 }
 
@@ -49,4 +50,7 @@ code > span {
 }
 .mt-2 {
   margin-top: 20px;
+}
+.mb-2 {
+  margin-bottom: 20px;
 }
