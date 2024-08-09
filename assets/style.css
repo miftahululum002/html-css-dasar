@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+.courier-prime-regular {
+  font-family: "Courier Prime", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.courier-prime-bold {
+  font-family: "Courier Prime", monospace;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.courier-prime-regular-italic {
+  font-family: "Courier Prime", monospace;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.courier-prime-bold-italic {
+  font-family: "Courier Prime", monospace;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.code {
+  font-family: "Courier Prime", monospace;
+  /* border: 2px solid #202fff; */
+  background-color: black;
+  padding: 10px;
+}
+code {
+  color: greenyellow;
+  font-family: "Courier Prime", monospace;
+}
+code > span {
+  display: block;
+}
+.btn-back {
+  background-color: #ffcc00;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 0px;
+  text-decoration: none;
+}
+
+.btn-back:hover {
+  background-color: #ffe260;
+  color: black;
+}
+.mt-2 {
+  margin-top: 20px;
+}
+.mb-2 {
+  margin-bottom: 20px;
+}
