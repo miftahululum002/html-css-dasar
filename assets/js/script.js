@@ -1,5 +1,9 @@
 const author = "by Miftahul Ulum";
 const head = document.head;
+// let favicon = document.createElement("link");
+// favicon.rel = "shortcut icon";
+// favicon.href = "assets/img/favicon.png";
+// document.getElementsByTagName("head")[0].appendChild(favicon);
 var title = document.querySelector("title");
 let titleText = title.innerHTML;
 let newTitle = titleText + " - " + author;
