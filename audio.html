@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+<body>
+    <!-- <audio id="myAudio" controls autoplay loop>
+            <source src="assets/audio/happy-day.mp3" type="audio/ogg" />
+            <source src="assets/audio/happy-day.mp3" type="audio/mpeg" />
+            Your browser does not support the audio element.
+        </audio> -->
+
+    <button type="button" id="playBtn">Play</button>
+    <button type="button" id="pauseBtn">Pause</button>
+    <button type="button" id="stopBtn">Stop</button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        var source = "assets/audio/happy-day.mp3";
+        var audio = new Audio();
+        // no event listener needed here
+        audio.src = source;
+        audio.autoplay = true;
+        audio.loop = true;
+        $(document).ready(function () {
+            setTimeout(function () {
+                $("#playBtn").trigger("click");
+            }, 100);
+        });
+
+        $("#playBtn").click(function () {
+            console.log("play");
+            audio.play();
+        });
+
+        $("#pauseBtn").click(function () {
+            audio.pause();
+        });
+
+        $("#stopBtn").click(function () {
+            audio.pause();
+            audio.currentTime = 0;
+        });
+    </script>
+</body>
+</html>
