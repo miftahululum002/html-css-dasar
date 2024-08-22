@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Light</title>
+    <meta content="Miftahul Ulum" name="author" />
+    <style>
+        body {
+            display: flex;
+            justify-content: start;
+            align-items: start;
+            height: 100vh;
+            margin: 0;
+            margin-left: 10px;
+            margin-top: 10px;
+            background-color: whitesmoke;
+        }
+
+        .traffic-light {
+            width: 100px;
+            background-color: black;
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .light {
+            width: 60px;
+            height: 60px;
+            margin: 10px 0;
+            background-color: #555;
+            border-radius: 50%;
+            border: 2px solid white;
+            opacity: 0.3;
+        }
+
+        .light.red.active {
+            background-color: red;
+            opacity: 1;
+        }
+
+        .light.yellow.active {
+            background-color: yellow;
+            opacity: 1;
+        }
+
+        .light.green.active {
+            background-color: green;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="traffic-light">
+        <div class="light red"></div>
+        <div class="light yellow"></div>
+        <div class="light green"></div>
+    </div>
+    <script>
+        // script unutk menjalankan lampu
+        document.addEventListener("DOMContentLoaded", function () {
+            const lights = document.querySelectorAll('.light');
+            let currentIndex = 0;
+            const delay = [3000, 1000, 2000];
+            // Waktu jeda untuk merah, kuning, hijau (ms)
+
+            function changeLight() {
+                lights.forEach((light, index) => {
+                    light.classList.remove('active');
+                });
+
+                lights[currentIndex].classList.add('active');
+
+                currentIndex = (currentIndex + 1) % lights.length;
+                setTimeout(changeLight, delay[currentIndex]);
+            }
+
+            changeLight();
+        });
+
+    </script>
+</body>
+</html>
