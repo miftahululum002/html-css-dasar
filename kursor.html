@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Animasi Mengikuti Kursor</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, #ff7e5f, #feb47b);
+            transform: translate(-50%, -50%);
+            transition: transform 0.1s ease-out;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            color: white;
+            text-align: center;
+            margin-top: 20%;
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <div class="content">
+        <h1>Gerakkan Kursor Anda</h1>
+        <p>Perhatikan latar belakang yang bergerak mengikuti kursor.</p>
+    </div>
+    <script>
+        const background = document.querySelector('.background');
+
+        document.addEventListener('mousemove', (e) => {
+            console.log(e)
+            const { clientX, clientY } = e;
+            const xOffset = (clientX / window.innerWidth) * 100;
+            const yOffset = (clientY / window.innerHeight) * 100;
+
+            background.style.transform = `translate(-${xOffset}%, -${yOffset}%)`;
+        });
+
+    </script>
+</body>
+</html>
