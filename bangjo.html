@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulasi Lampu Merah</title>
+    <style>
+        body {
+            background-color: #353535;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+        }
+
+        .board {
+            width: 100px;
+            height: 300px;
+            background-color: #333;
+            border: 2px solid white;
+            border-radius: 10px;
+            margin-left: 20px;
+            padding: 10px;
+        }
+
+        .lampu {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 2px solid white;
+            margin: 10px;
+            transition: background-color 1s;
+            opacity: 0.3;
+        }
+
+        .merah.active {
+            background-color: #ff0000;
+            opacity: 1;
+        }
+
+        .kuning.active {
+            background-color: yellow;
+            opacity: 1;
+        }
+
+        .hijau.active {
+            background-color: green;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="board">
+        <div class="lampu merah"></div>
+        <div class="lampu kuning"></div>
+        <div class="lampu hijau"></div>
+    </div>
+    <script>
+        const lampus = document.querySelectorAll('.lampu');
+        const delay = [4000, 2000, 3000];
+        let currentIndex = 0;
+        function setSimulasi() {
+            lampus.forEach((lampu, index) => {
+                lampus[currentIndex].classList.remove('active');
+            });
+            currentIndex = (currentIndex + 1) % lampus.length;
+            lampus[currentIndex].classList.add('active');
+            setTimeout(setSimulasi, delay[currentIndex]);
+        }
+        setSimulasi();
+    </script>
+</body>
+</html>
