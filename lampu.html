@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saklar Lampu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .lamp-container {
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .lamp {
+            width: 100px;
+            height: 100px;
+            background-color: grey;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+        #switch:checked + .lamp-container .lamp {
+            background-color: yellow;
+            box-shadow: 0 0 50px rgba(255, 255, 0, 0.8);
+        }
+        .switch-label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        .switch-container {
+            position: relative;
+            width: 60px;
+            height: 34px;
+        }
+        .switch {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: grey;
+            border-radius: 34px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .switch:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            border-radius: 50%;
+            transition: transform 0.3s;
+        }
+        #switch:checked + .lamp-container .switch {
+            background-color: yellow;
+        }
+        #switch:checked + .lamp-container .switch:before {
+            transform: translateX(26px);
+        }
+    </style>
+</head>
+<body>
+
+    <label for="switch" class="switch-label">Saklar Lampu</label>
+    <input type="checkbox" id="switch" style="display: none;">
+    <div class="lamp-container">
+        <div class="lamp"></div>
+        <div class="switch-container">
+            <div class="switch"></div>
+        </div>
+    </div>
+
+</body>
+</html>
